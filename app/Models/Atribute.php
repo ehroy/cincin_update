@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Categori extends Model
+class Atribute extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
+        'products_id',
+        'type',
         'name',
-        'description',
-        'active',
     ];
+   
+
     public function product():HasMany
     {
         return $this->hasMany(Product::class);

@@ -4,10 +4,12 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductsResource\Pages;
 use App\Filament\Resources\ProductsResource\RelationManagers;
+use App\Models\Atribute;
 use App\Models\Categori;
 use App\Models\Product;
 use App\Models\Products;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
@@ -71,7 +73,11 @@ class ProductsResource extends Resource
                 ->sortable(),
             Tables\Columns\IconColumn::make('active')
                 ->boolean(),
-            Tables\Columns\IconColumn::make('recomended')->boolean()
+            Tables\Columns\IconColumn::make('recomended')->boolean(),
+            Tables\Columns\TextColumn::make('type')
+            ->searchable(),
+            Tables\Columns\TextColumn::make('type_attribute')
+            ->searchable(),
             ])
             ->filters([
                 //

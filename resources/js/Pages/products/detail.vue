@@ -69,6 +69,30 @@
                 >
                     Pre Order 7-14 hari kerja
                 </h2>
+                <p>kadar</p>
+                <div class="flex gap-2">
+                    <div v-for="(attributes, index) in Attribute" :key="index">
+                        <div v-if="attributes.type === 'kadar'">
+                            <div>
+                                <p class="border p-1 px-2 text-sm">
+                                    {{ attributes.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2">bahan</p>
+                <div class="flex gap-2">
+                    <div v-for="(attributes, index) in Attribute" :key="index">
+                        <div v-if="attributes.type === 'bahan'">
+                            <div>
+                                <p class="border p-1 px-2 text-sm">
+                                    {{ attributes.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <p
                     class="text-2xl font-bold text-gray-900 mb-4"
                     v-if="Products.price !== 0"
@@ -199,6 +223,7 @@ defineProps({
     Categori: Object,
     ProductsPopuller: Object,
     Categoris: Object,
+    Attribute: Object,
 });
 const showDescription = ref(true);
 

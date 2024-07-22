@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Atribute;
 use App\Models\Categori;
 use App\Models\Product;
 use App\Models\ProductAttributes;
@@ -31,7 +32,7 @@ class JustOrangeController extends Controller
             case 'asc_harga':
                 $product = Product::where('active',true)->orderBy('price','asc')->take(8)->with('category')->get();
              default:
-                $product =  Product::where('active', true)->orderBy('id', 'desc')->take(8)->with('category')->get();
+                $product =  Product::where('active', true)->orderBy('id', 'desc')->take(8)->with('category')->with('atributes')->get();
                 break;
         }
         $data["ProductsAll"] = $product;
@@ -45,21 +46,22 @@ class JustOrangeController extends Controller
         // dd($filter);
         switch ($filter) {
             case 'all':
-                $product = Product::where("active",true)->orderBy('created_at')->take(8)->with('category')->get();
+                $product = Product::where("active",true)->orderBy('created_at')->with('category')->with('attribute')->get();
                 break;
             case 'new':
                 $product = Product::where("active",true)->orderBy('id','desc')->take(8)->with('category')->get();
             case 'rekomendasi':
-                $product = Product::where('recomended',true)->orderBy('id','asc')->take(8)->with('category')->get();
+                $product = Product::where('active',true)->orderBy('recomended')->with('category')->get();
             case 'desc_harga':
                 $product = Product::where('active',true)->orderBy('price','desc')->take(8)->with('category')->get();
             case 'asc_harga':
                 $product = Product::where('active',true)->orderBy('price','asc')->take(8)->with('category')->get();
              default:
-                $product =  Product::where('active', true)->orderBy('id', 'desc')->take(8)->with('category')->get();
-                break;
+             $product =  Product::where('active', true)->orderBy('id', 'desc')->take(8)->with('category')->with('atributes')->get();
+             break;
         }
         $data["ProductsAll"] = $product;
+        // dd($data["ProductsAll"]);
         $data["ProductsPopuller"] = $product = Product::where('recomended',true)->orderBy('id','asc')->take(8)->with('category')->get();
         $data['Filter'] = $filter;
         $data['Categoris'] = Categori::all();
@@ -71,10 +73,11 @@ class JustOrangeController extends Controller
     {
 
         $slug = $request->slug;
-        $data["Products"] = Product::where("slug",$slug)->with('category')->first();
+        $data["Products"] = Product::where("slug",$slug)->first();
         $data["Categori"] = Categori::where('id',$data["Products"]->category_id)->first();
-        $data["ProductsPopuller"] = Product::where("category_id",$data["Products"]->category_id)->with('category')->get();
+        $data["ProductsPopuller"] = Product::where("category_id",$data["Products"]->category_id)->with('category')->with('atributes')->get();
         $data["Categoris"] = Categori::all();
+        $data['Attribute'] = Atribute::where("products_id",$data["Products"]->id)->get();
         return Inertia::render('products/detail',$data);
     }
     public function categoribyid(Request $request): \Inertia\Response

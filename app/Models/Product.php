@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -22,8 +23,15 @@ class Product extends Model
     protected $casts = [
         'image' => 'array',
     ];
-    public function category(): BelongsTo
+    public function category()
     {
         return $this->belongsTo(Categori::class);
     }
+
+    public function atributes():HasMany
+    {
+        return $this->hasMany(Atribute::class,'id');
+    }
+    
+   
 }

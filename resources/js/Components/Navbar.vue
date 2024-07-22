@@ -82,7 +82,7 @@
                         class="absolute hidden group-hover:block bg-white text-black align-bottom rounded-md shadow-lg"
                     >
                         <Link
-                            class="block px-4 py-2 hover:bg-yellow-400"
+                            class="block px-8 p-1 hover:bg-yellow-400 text-sm"
                             v-for="Categories in Categoris"
                             :key="Categories.id"
                             :href="'/categori/' + Categories.id"
