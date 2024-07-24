@@ -1,7 +1,7 @@
 <template>
     <Navbar :Categoris="Categoris" />
     <div
-        class="container mx-auto p-6 text-center font-primary bg-blue-400 mt-12"
+        class="container mx-auto p-6 text-center font-primary bg-blue-400 mt-12 min-h-screen"
     >
         <img
             src="assets/images/logo.jpeg"

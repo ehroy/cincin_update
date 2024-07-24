@@ -1,6 +1,6 @@
 <template>
     <Navbar :Categoris="Categoris" />
-    <div class="container mx-auto p-8 mt-20 font-primary">
+    <div class="mx-auto p-8 mt-20 font-primary">
         <div class="flex flex-wrap px-2">
             <div class="w-full md:w-1/2 px-4">
                 <nav class="text-gray-900 text-sm mb-4">
@@ -17,7 +17,7 @@
                     <img
                         :src="imageUrl(Products.image[activeImage])"
                         alt="Product Image"
-                        class="w-full rounded-lg mb-4 h-96 border border-orange-700"
+                        class="w-full rounded-lg mb-4 h-96 border border-gray-800 object-cover"
                     />
                     <div class="flex space-x-2">
                         <div
@@ -102,19 +102,6 @@
                 <p v-else class="p-3 border rounded-xl w-52">
                     Harga Hubungi Admin
                 </p>
-                <!-- <p class="line-through text-gray-500 mb-4">
-                    Harga Retail IDR
-                    {{ helpers.rupiah(Products.price) }}
-                </p> -->
-
-                <!-- <div class="mb-4">
-                    <h3 class="text-lg font-semibold">Material</h3>
-                    <p class="text-gray-700">cc</p>
-                </div>
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold">Dimensi</h3>
-                    <p class="text-gray-700">cc</p>
-                </div> -->
 
                 <button
                     @click="
@@ -173,7 +160,7 @@
     </div>
 
     <section class="py-12">
-        <div class="container mx-auto">
+        <div class="p-8 mx-auto">
             <h2
                 class="text-xl font-primary underline text-center mb-6 text-gray-700"
             >
@@ -181,7 +168,7 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
-                    class="bg-white p-6 rounded-lg text-center"
+                    class="bg-white p-6 rounded-lg text-center border"
                     v-for="(product, index) in ProductsPopuller"
                     :key="index"
                 >

@@ -1,6 +1,6 @@
 <template>
     <Navbar :Categoris="Categori" />
-    <Product :ProductsAll="ProductsAll" />
+    <Product :ProductsAll="ProductsAll" class="min-h-screen" />
     <Footer />
 </template>
 

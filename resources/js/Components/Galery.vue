@@ -39,13 +39,13 @@ export default {
                 },
                 {
                     id: 3,
-                    src: "https://via.placeholder.com/300",
+                    src: "assets/images/herosectionnew.jpg",
                     alt: "Image 3",
                     title: "Image 3",
                 },
                 {
                     id: 4,
-                    src: "https://via.placeholder.com/300",
+                    src: "assets/images/logo.jpeg",
                     alt: "Image 4",
                     title: "Image 4",
                 },

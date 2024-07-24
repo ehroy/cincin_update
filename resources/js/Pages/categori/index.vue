@@ -1,6 +1,6 @@
 <template>
     <Navbar :Categoris="Categoris" />
-    <section class="py-12">
+    <section class="py-12 min-h-screen">
         <div
             class="container mx-auto font-primary mt-12 px-12"
             v-if="ProductCategori.length"
@@ -71,7 +71,7 @@
                 </nav>
             </div>
             <div
-                class="text-2xl mt-8 font-bold h-[480px] flex justify-center text-right items-center gap-4"
+                class="text-2xl font-bold min-h-screen flex justify-center text-right items-center gap-4"
             >
                 <h2>Product Not Found</h2>
                 <svg

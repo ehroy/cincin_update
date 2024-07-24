@@ -19,7 +19,7 @@
                     <a
                         v-if="feature.link"
                         :href="feature.link"
-                        class="text-blue-500 underline align-baseline"
+                        class="text-blue-500 underline align-baseline p-4"
                         >{{ feature.linkText }}</a
                     >
                 </div>

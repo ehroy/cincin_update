@@ -1,7 +1,7 @@
 <template>
     <div class="font-primary">
         <Navbar :Categoris="Categoris" />
-        <HeroSection />
+        <Slider />
         <Atribute />
         <ProductRecomended :ProductsPopuller="ProductsPopuller" />
         <Promo />
@@ -15,6 +15,7 @@
 <script setup>
 import Navbar from "../Components/Navbar.vue";
 import HeroSection from "../Components/HeroSection.vue";
+import Slider from "../Components/Slider.vue";
 import Galery from "../Components/Galery.vue";
 import ProductPage from "../Components/ProductPage.vue";
 import ProductRecomended from "../Components/ProductRecomended.vue";
