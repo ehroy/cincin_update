@@ -19,6 +19,19 @@
                 />
             </svg>
         </button>
+        <div
+            class="text-center justify-center bg-opacity-50 absolute text-white mx-auto p-8"
+        >
+            <h1 class="text-4xl font-bold mb-4">
+                Temukan Cincin Untuk Pasanganmu Yang Tepat
+            </h1>
+            <p class="text-xl mb-6">Nyaman, Bergaya, dan Terjangkau</p>
+            <button
+                class="bg-white text-gray-900 py-2 px-4 rounded font-semibold hover:bg-blue-400 hover:transition-colors hover:text-white"
+            >
+                <a href="/products">Explore</a>
+            </button>
+        </div>
         <div class="w-full h-[30vh] lg:h-[70vh]">
             <div class="w-full flex-shrink-0 h-[30vh] lg:h-[70vh]">
                 <img
@@ -26,11 +39,6 @@
                     :alt="slides[currentSlide].title"
                     class="w-full rounded-xl object-cover h-[30vh] lg:h-[70vh] transition-transform duration-500"
                 />
-                <!-- <p
-                        class="text-center mt-2 bg-white bg-opacity-50 absolute bottom-0 w-full"
-                    >
-                        {{ slides[currentSlide].title }}
-                    </p> -->
             </div>
         </div>
         <button @click="nextSlide" class="right-0 z-10">
